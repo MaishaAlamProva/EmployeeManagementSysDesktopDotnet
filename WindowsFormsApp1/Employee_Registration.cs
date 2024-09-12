@@ -10,26 +10,20 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Dashboard : UserControl
+    public partial class Employee_Registration : Form
     {
-        public Dashboard()
+        public Employee_Registration()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Employee_Registration_Load(object sender, EventArgs e)
         {
 
         }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void Employee_Registration_FormClosing(object sender, FormClosingEventArgs e)
         {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
+            Application.Exit();
         }
     }
 }

@@ -70,6 +70,24 @@
     <Compile Include="Employee.Designer.cs">
       <DependentUpon>Employee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Employee_Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee_Info.Designer.cs">
+      <DependentUpon>Employee_Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee_Login.Designer.cs">
+      <DependentUpon>Employee_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee_Registration.Designer.cs">
+      <DependentUpon>Employee_Registration.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +108,18 @@
     <Compile Include="Salary.Designer.cs">
       <DependentUpon>Salary.cs</DependentUpon>
     </Compile>
+    <Compile Include="Show_Empid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Show_Empid.Designer.cs">
+      <DependentUpon>Show_Empid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Update Information.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Update Information.Designer.cs">
+      <DependentUpon>Update Information.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Addemployee.resx">
       <DependentUpon>Addemployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,6 +131,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee_Info.resx">
+      <DependentUpon>Employee_Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee_Login.resx">
+      <DependentUpon>Employee_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee_Registration.resx">
+      <DependentUpon>Employee_Registration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -119,6 +158,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Salary.resx">
       <DependentUpon>Salary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Show_Empid.resx">
+      <DependentUpon>Show_Empid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Update Information.resx">
+      <DependentUpon>Update Information.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

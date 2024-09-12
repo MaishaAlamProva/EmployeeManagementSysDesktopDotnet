@@ -34,26 +34,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MistyRose;
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(-5, -5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(419, 679);
+            this.panel1.Size = new System.Drawing.Size(341, 711);
             this.panel1.TabIndex = 0;
             // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(113, 422);
+            this.button4.Location = new System.Drawing.Point(617, 408);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(183, 71);
             this.button4.TabIndex = 11;
@@ -64,7 +58,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.Red;
             this.button3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(113, 525);
+            this.button3.Location = new System.Drawing.Point(626, 532);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(174, 63);
             this.button3.TabIndex = 10;
@@ -75,7 +69,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(74, 99);
+            this.label1.Location = new System.Drawing.Point(553, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(270, 40);
             this.label1.TabIndex = 1;
@@ -84,7 +78,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(113, 322);
+            this.button2.Location = new System.Drawing.Point(617, 291);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(183, 71);
             this.button2.TabIndex = 3;
@@ -94,25 +88,31 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(113, 214);
+            this.button1.Location = new System.Drawing.Point(607, 177);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(183, 72);
             this.button1.TabIndex = 2;
             this.button1.Text = "Show Info";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(927, 673);
+            this.ClientSize = new System.Drawing.Size(1130, 704);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Name = "Employee";
             this.Text = "Employee";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Employee_FormClosing);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Load += new System.EventHandler(this.Employee_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

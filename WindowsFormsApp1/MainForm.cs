@@ -88,7 +88,9 @@ namespace WindowsFormsApp1
 
         private void employee_btn_Click(object sender, EventArgs e)
         {
-
+            Employee_Login employee_Login = new Employee_Login();
+            employee_Login.ShowDialog();
+            this.Hide();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)

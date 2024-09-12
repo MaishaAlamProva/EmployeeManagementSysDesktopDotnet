@@ -48,5 +48,17 @@ namespace WindowsFormsApp1
         {
             Application.Exit();
         }
+
+        private void logIn_btn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Admin adminForm = new Admin();
+            adminForm.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
