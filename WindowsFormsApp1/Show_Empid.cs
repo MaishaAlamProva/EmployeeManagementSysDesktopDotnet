@@ -28,6 +28,14 @@ namespace WindowsFormsApp1
         {
 
         }
+       
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Update_Information update_Information = new Update_Information();
+            update_Information.Show();
+            this.Hide();
+        }
         private void Show_Empid_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();

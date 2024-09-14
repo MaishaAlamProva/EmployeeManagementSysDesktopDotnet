@@ -35,7 +35,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.Admin_btn = new System.Windows.Forms.Button();
             this.employee_btn = new System.Windows.Forms.Button();
-            this.exit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // imageList1
@@ -55,23 +54,23 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(344, 703);
+            this.panel1.Size = new System.Drawing.Size(344, 660);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(480, 104);
+            this.label5.Font = new System.Drawing.Font("Tahoma", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(468, 115);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(223, 43);
+            this.label5.Size = new System.Drawing.Size(229, 45);
             this.label5.TabIndex = 6;
             this.label5.Text = "Home page";
             // 
             // Admin_btn
             // 
-            this.Admin_btn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.Admin_btn.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Admin_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Admin_btn.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Admin_btn.Location = new System.Drawing.Point(459, 240);
@@ -84,10 +83,10 @@
             // 
             // employee_btn
             // 
-            this.employee_btn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.employee_btn.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.employee_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.employee_btn.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employee_btn.Location = new System.Drawing.Point(459, 346);
+            this.employee_btn.Location = new System.Drawing.Point(459, 350);
             this.employee_btn.Name = "employee_btn";
             this.employee_btn.Size = new System.Drawing.Size(253, 84);
             this.employee_btn.TabIndex = 9;
@@ -95,23 +94,11 @@
             this.employee_btn.UseVisualStyleBackColor = false;
             this.employee_btn.Click += new System.EventHandler(this.employee_btn_Click);
             // 
-            // exit
-            // 
-            this.exit.BackColor = System.Drawing.Color.Red;
-            this.exit.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exit.Location = new System.Drawing.Point(488, 451);
-            this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(200, 69);
-            this.exit.TabIndex = 10;
-            this.exit.Text = "Exit";
-            this.exit.UseVisualStyleBackColor = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(865, 700);
-            this.Controls.Add(this.exit);
+            this.ClientSize = new System.Drawing.Size(865, 577);
             this.Controls.Add(this.employee_btn);
             this.Controls.Add(this.Admin_btn);
             this.Controls.Add(this.label5);
@@ -134,7 +121,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button Admin_btn;
         private System.Windows.Forms.Button employee_btn;
-        private System.Windows.Forms.Button exit;
     }
 }
 

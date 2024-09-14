@@ -10,25 +10,20 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Employee_Registration : Form
+    public partial class Resign_Form : Form
     {
-        public Employee_Registration()
+        public Resign_Form()
         {
             InitializeComponent();
         }
 
-        private void Employee_Registration_Load(object sender, EventArgs e)
+        private void Resign_Form_Load(object sender, EventArgs e)
         {
 
         }
-        private void Employee_Registration_FormClosing(object sender, FormClosingEventArgs e)
+        private void Resign_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
-        }
-
-        private void loginBack_btn_Click(object sender, EventArgs e)
-        {
-           
         }
     }
 }

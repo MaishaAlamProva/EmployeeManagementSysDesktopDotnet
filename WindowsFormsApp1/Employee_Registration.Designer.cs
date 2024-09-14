@@ -79,6 +79,7 @@
             this.loginBack_btn.TabIndex = 29;
             this.loginBack_btn.Text = "Back";
             this.loginBack_btn.UseVisualStyleBackColor = false;
+            this.loginBack_btn.Click += new System.EventHandler(this.loginBack_btn_Click);
             // 
             // login_showpass
             // 

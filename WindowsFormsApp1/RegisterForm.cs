@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.BusinessLayer;
+using WindowsFormsApp1.Models.ViewModel;
 
 namespace WindowsFormsApp1
 {
     public partial class RegisterForm : Form
     {
+        AuthenticationLayer auth = new AuthenticationLayer();
         public RegisterForm()
         {
             InitializeComponent();
@@ -41,7 +44,9 @@ namespace WindowsFormsApp1
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            MainForm mainForm = new MainForm();
+            mainForm.ShowDialog();
+            this.Close();
         }
 
         private void RegisterForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -51,6 +56,27 @@ namespace WindowsFormsApp1
 
         private void logIn_btn_Click(object sender, EventArgs e)
         {
+            string UserName = login_username.Text;
+            string Password = login_pass.Text;
+
+            if(string.IsNullOrEmpty(UserName) || string.IsNullOrEmpty(Password))
+            {
+                MessageBox.Show("UserName and Password Required!!");
+                return;
+            }
+
+            LoginViewModel model = new LoginViewModel();
+            model.UserName = UserName;
+            model.Password = Password;
+
+            var status = auth.LoginAuthentication(model);
+
+            if(!status)
+            {
+                MessageBox.Show("Invalid UserName or Password!!");
+                return;
+            }
+
             this.Hide();
             Admin adminForm = new Admin();
             adminForm.ShowDialog();
@@ -59,6 +85,16 @@ namespace WindowsFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void login_username_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void login_pass_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

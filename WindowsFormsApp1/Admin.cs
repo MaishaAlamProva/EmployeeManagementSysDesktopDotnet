@@ -32,36 +32,72 @@ namespace WindowsFormsApp1
 
         }
 
-        private void Admin_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void dashboard1_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+               private void salary1_Load(object sender, EventArgs e)
         {
-            dashboard1.Visible = true;
-            addemployee1.Visible = false;
+
+        }
+
+        
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.ShowDialog();
+            this.Close();
+        }
+
+       /* private void button7_Click(object sender, EventArgs e)
+        {
+            dashboard2.Visible = true;
+            addemployee2.Visible = false;
             salary1.Visible = false;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button8_Click(object sender, EventArgs e)
         {
-                dashboard1.Visible = false;
-                addemployee1.Visible = true;
-                salary1.Visible = false;
-           
+            dashboard2.Visible = false;
+            addemployee2.Visible = true;
+            salary1.Visible = false;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e)
         {
-            dashboard1.Visible = false;
-            addemployee1.Visible = false;
+            dashboard2.Visible = false;
+            addemployee2.Visible = false;
             salary1.Visible = true;
+        }*/
+
+        
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            dashboard2.Visible = true;
+            addemployee2.Visible = false;
+            salary1.Visible = false;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            dashboard2.Visible = false;
+            addemployee2.Visible = true;
+            salary1.Visible = false;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            dashboard2.Visible = false;
+            addemployee2.Visible = false;
+            salary1.Visible = true;
+        }
+        private void Admin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

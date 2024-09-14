@@ -18,10 +18,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void Employee_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -33,6 +30,32 @@ namespace WindowsFormsApp1
         private void Employee_Load(object sender, EventArgs e)
         {
 
+        }
+
+        /*private void button2_Click(object sender, EventArgs e, Update_Information update_Information)
+        {
+            //this.Close();
+            Update_Information update_information = new Update_Information();
+            update_information.Show();
+            this.Hide();
+        }*/
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Show_Empid show_Empid2 = new Show_Empid();
+            show_Empid2.ShowDialog();
+            this.Hide();
+        }
+        private void Employee_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Resign_Form resign_Form = new Resign_Form();
+            resign_Form.ShowDialog();
+            this.Hide();
         }
     }
 }

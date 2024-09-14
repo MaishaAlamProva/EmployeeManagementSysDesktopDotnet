@@ -21,9 +21,5 @@ namespace WindowsFormsApp1
         {
 
         }
-        private void Employee_Info_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
     }
 }

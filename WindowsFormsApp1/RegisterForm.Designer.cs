@@ -37,7 +37,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.loginBack_btn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // logIn_btn
@@ -45,9 +44,9 @@
             this.logIn_btn.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.logIn_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.logIn_btn.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logIn_btn.Location = new System.Drawing.Point(520, 431);
+            this.logIn_btn.Location = new System.Drawing.Point(491, 426);
             this.logIn_btn.Name = "logIn_btn";
-            this.logIn_btn.Size = new System.Drawing.Size(220, 85);
+            this.logIn_btn.Size = new System.Drawing.Size(235, 85);
             this.logIn_btn.TabIndex = 19;
             this.logIn_btn.Text = "Log In";
             this.logIn_btn.UseVisualStyleBackColor = false;
@@ -68,7 +67,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(471, 86);
+            this.label5.Location = new System.Drawing.Point(430, 87);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(362, 38);
             this.label5.TabIndex = 16;
@@ -76,18 +75,19 @@
             // 
             // login_pass
             // 
-            this.login_pass.Location = new System.Drawing.Point(413, 327);
+            this.login_pass.Location = new System.Drawing.Point(381, 327);
             this.login_pass.Multiline = true;
             this.login_pass.Name = "login_pass";
             this.login_pass.PasswordChar = '*';
             this.login_pass.Size = new System.Drawing.Size(420, 37);
             this.login_pass.TabIndex = 15;
+            this.login_pass.TextChanged += new System.EventHandler(this.login_pass_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(376, 286);
+            this.label3.Location = new System.Drawing.Point(361, 285);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(115, 28);
             this.label3.TabIndex = 14;
@@ -95,17 +95,18 @@
             // 
             // login_username
             // 
-            this.login_username.Location = new System.Drawing.Point(413, 220);
+            this.login_username.Location = new System.Drawing.Point(381, 216);
             this.login_username.Multiline = true;
             this.login_username.Name = "login_username";
             this.login_username.Size = new System.Drawing.Size(420, 39);
             this.login_username.TabIndex = 13;
+            this.login_username.TextChanged += new System.EventHandler(this.login_username_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(376, 176);
+            this.label2.Location = new System.Drawing.Point(355, 176);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(121, 28);
             this.label2.TabIndex = 12;
@@ -117,14 +118,14 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Location = new System.Drawing.Point(-1, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(360, 703);
+            this.panel1.Size = new System.Drawing.Size(296, 703);
             this.panel1.TabIndex = 11;
             // 
             // loginBack_btn
             // 
             this.loginBack_btn.BackColor = System.Drawing.Color.Red;
             this.loginBack_btn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginBack_btn.Location = new System.Drawing.Point(533, 613);
+            this.loginBack_btn.Location = new System.Drawing.Point(509, 526);
             this.loginBack_btn.Name = "loginBack_btn";
             this.loginBack_btn.Size = new System.Drawing.Size(207, 80);
             this.loginBack_btn.TabIndex = 21;
@@ -132,25 +133,11 @@
             this.loginBack_btn.UseVisualStyleBackColor = false;
             this.loginBack_btn.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(496, 522);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(266, 85);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Sign In";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(865, 700);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(865, 636);
             this.Controls.Add(this.loginBack_btn);
             this.Controls.Add(this.logIn_btn);
             this.Controls.Add(this.login_showpass);
@@ -181,6 +168,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button loginBack_btn;
-        private System.Windows.Forms.Button button1;
     }
 }
