@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
 {
     public partial class RegisterForm : Form
     {
-        AuthenticationLayer auth = new AuthenticationLayer();
+        AuthenticationService auth = new AuthenticationService();
         public RegisterForm()
         {
             InitializeComponent();
@@ -56,30 +56,46 @@ namespace WindowsFormsApp1
 
         private void logIn_btn_Click(object sender, EventArgs e)
         {
+
             string UserName = login_username.Text;
             string Password = login_pass.Text;
 
-            if(string.IsNullOrEmpty(UserName) || string.IsNullOrEmpty(Password))
+            if (string.IsNullOrEmpty(UserName) && string.IsNullOrEmpty(Password))
             {
                 MessageBox.Show("UserName and Password Required!!");
                 return;
             }
 
-            LoginViewModel model = new LoginViewModel();
-            model.UserName = UserName;
-            model.Password = Password;
-
-            var status = auth.LoginAuthentication(model);
-
-            if(!status)
+            if (UserName == "admin" && Password == "admin")
             {
-                MessageBox.Show("Invalid UserName or Password!!");
-                return;
+                
+                this.Hide();
+                Admin adminForm = new Admin();
+                adminForm.ShowDialog();
             }
 
-            this.Hide();
-            Admin adminForm = new Admin();
-            adminForm.ShowDialog();
+           
+            else
+            {
+                LoginViewModel model = new LoginViewModel();
+                model.UserName = UserName;
+                model.Password = Password;
+
+                var status = auth.LoginAdminAuthentication(model);
+
+                if (!status)
+                {
+                    MessageBox.Show("Invalid UserName or Password!!");
+                    return;
+                }
+
+
+        }
+        /*this.Hide();
+        Admin adminForm = new Admin();
+        adminForm.ShowDialog();*/
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)

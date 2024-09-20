@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Update_Information : UserControl
+    public partial class Update_EmpInfo : Form
     {
-        public Update_Information()
+        public Update_EmpInfo()
         {
             InitializeComponent();
         }

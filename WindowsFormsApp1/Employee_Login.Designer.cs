@@ -77,18 +77,19 @@
             // 
             this.login_showpass.AutoSize = true;
             this.login_showpass.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.login_showpass.Location = new System.Drawing.Point(732, 369);
+            this.login_showpass.Location = new System.Drawing.Point(746, 369);
             this.login_showpass.Name = "login_showpass";
             this.login_showpass.Size = new System.Drawing.Size(130, 22);
             this.login_showpass.TabIndex = 28;
             this.login_showpass.Text = "Show Password";
             this.login_showpass.UseVisualStyleBackColor = true;
+            this.login_showpass.CheckedChanged += new System.EventHandler(this.login_showpass_CheckedChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(402, 71);
+            this.label5.Location = new System.Drawing.Point(418, 71);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(418, 38);
             this.label5.TabIndex = 27;
@@ -148,7 +149,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(865, 700);
+            this.ClientSize = new System.Drawing.Size(888, 700);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.loginBack_btn);
             this.Controls.Add(this.logIn_btn);
@@ -159,6 +160,7 @@
             this.Controls.Add(this.login_username);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Employee_Login";
             this.Text = "Employee_Login";
             this.Load += new System.EventHandler(this.Employee_Login_Load);

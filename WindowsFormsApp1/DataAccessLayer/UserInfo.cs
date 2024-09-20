@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using WindowsFormsApp1.Models.DBModel;
+using WindowsFormsApp1.Utilities;
 
 namespace WindowsFormsApp1.DataAccessLayer
 {
@@ -70,6 +71,86 @@ namespace WindowsFormsApp1.DataAccessLayer
 
             return userInfo;
         }
+
+        public bool CreateUserInfo(UserInfoModel user)
+        {
+            string connectionString = Common.connectionString;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "INSERT INTO UserInfo (UserName, Password, IsAdmin) " +
+                                  "VALUES (@UserName, @Password, @IsAdmin)";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+
+                        command.Parameters.AddWithValue("@UserName", user.UserName);
+                        command.Parameters.AddWithValue("@Password", user.Password);
+                        command.Parameters.AddWithValue("@IsAdmin", user.IsAdmin);
+
+                        int result = command.ExecuteNonQuery();
+
+                        if (result > 0)
+                        {
+                            return true;
+                        }
+
+                        return false;
+
+
+                    }
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message.ToString());
+                return false;
+            }
+        }
+
+
+        public bool DeleteEmployeeByKey(int empKey)
+        {
+            string connectionString = Common.connectionString;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    
+                    string query = "DELETE FROM Employees WHERE EmpKey = @EmpKey";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        
+                        command.Parameters.AddWithValue("@EmpKey", empKey);
+
+                        
+                        int result = command.ExecuteNonQuery();
+
+                        
+                        if (result > 0)
+                        {
+                            return true;
+                        }
+
+                        
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message.ToString());
+                return false;
+            }
+        }
+
 
 
     }

@@ -48,6 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -73,13 +74,18 @@
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
-    <Compile Include="BusinessLayer\AuthenticationLayer.cs" />
+    <Compile Include="BusinessLayer\AuthenticationService.cs" />
+    <Compile Include="BusinessLayer\DesignationService.cs" />
+    <Compile Include="BusinessLayer\EmployeeService.cs" />
+    <Compile Include="BusinessLayer\SalaryService.cs" />
     <Compile Include="Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\DesignationInfo.cs" />
+    <Compile Include="DataAccessLayer\EmployeeInfo.cs" />
     <Compile Include="DataAccessLayer\SalaryInfo.cs" />
     <Compile Include="DataAccessLayer\UserInfo.cs" />
     <Compile Include="Employee.cs">
@@ -112,7 +118,8 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\DBModel\SalaryInfoModel.cs" />
+    <Compile Include="Models\DBModel\DesignationInfoModel.cs" />
+    <Compile Include="Models\DBModel\EmployeesInfoModel.cs" />
     <Compile Include="Models\DBModel\UserInfoModel.cs" />
     <Compile Include="Models\ViewModel\LoginViewModel.cs" />
     <Compile Include="Program.cs" />
@@ -141,12 +148,19 @@
     <Compile Include="Show_Empid.Designer.cs">
       <DependentUpon>Show_Empid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Update Information.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Show_EmpInfo.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Update Information.Designer.cs">
-      <DependentUpon>Update Information.cs</DependentUpon>
+    <Compile Include="Show_EmpInfo.Designer.cs">
+      <DependentUpon>Show_EmpInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Update_EmpInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update_EmpInfo.Designer.cs">
+      <DependentUpon>Update_EmpInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\Common.cs" />
     <EmbeddedResource Include="Addemployee.resx">
       <DependentUpon>Addemployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,8 +206,11 @@
     <EmbeddedResource Include="Show_Empid.resx">
       <DependentUpon>Show_Empid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Update Information.resx">
-      <DependentUpon>Update Information.cs</DependentUpon>
+    <EmbeddedResource Include="Show_EmpInfo.resx">
+      <DependentUpon>Show_EmpInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Update_EmpInfo.resx">
+      <DependentUpon>Update_EmpInfo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -208,9 +225,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Utilities\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>

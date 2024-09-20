@@ -41,15 +41,14 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,6 +130,7 @@
             this.label7.Size = new System.Drawing.Size(87, 25);
             this.label7.TabIndex = 6;
             this.label7.Text = "Position:";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // textBox1
             // 
@@ -187,60 +187,25 @@
             this.panel3.TabIndex = 15;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // button2
+            // comboBox2
             // 
-            this.button2.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.button2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(31, 619);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(129, 52);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Add";
-            this.button2.UseVisualStyleBackColor = false;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(468, 218);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(243, 24);
+            this.comboBox2.TabIndex = 16;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // button3
+            // comboBox1
             // 
-            this.button3.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.button3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(221, 619);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(129, 52);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Update";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.button4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(399, 619);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(129, 52);
-            this.button4.TabIndex = 18;
-            this.button4.Text = "Delete";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.button5.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(567, 619);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(129, 52);
-            this.button5.TabIndex = 19;
-            this.button5.Text = "Clear";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.Red;
-            this.button6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(731, 619);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(109, 51);
-            this.button6.TabIndex = 20;
-            this.button6.Text = "Back";
-            this.button6.UseVisualStyleBackColor = false;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Female",
+            "Male"});
+            this.comboBox1.Location = new System.Drawing.Point(468, 134);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(243, 24);
+            this.comboBox1.TabIndex = 15;
             // 
             // textBox7
             // 
@@ -260,37 +225,59 @@
             this.label8.TabIndex = 13;
             this.label8.Text = "Salary:";
             // 
-            // comboBox1
+            // button2
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Female",
-            "Male"});
-            this.comboBox1.Location = new System.Drawing.Point(468, 134);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(243, 24);
-            this.comboBox1.TabIndex = 15;
+            this.button2.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.button2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(45, 619);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(129, 52);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Add";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // comboBox2
+            // button3
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Intern Software Engineer",
-            "Junior Software Engineer",
-            "Software Architect",
-            "Data Analyst",
-            "UX/UI Designers"});
-            this.comboBox2.Location = new System.Drawing.Point(468, 218);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(243, 24);
-            this.comboBox2.TabIndex = 16;
+            this.button3.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.button3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(243, 619);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(129, 52);
+            this.button3.TabIndex = 17;
+            this.button3.Text = "Update";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.button4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(456, 619);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(129, 52);
+            this.button4.TabIndex = 18;
+            this.button4.Text = "Delete";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.button5.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(683, 619);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(129, 52);
+            this.button5.TabIndex = 19;
+            this.button5.Text = "Clear";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Addemployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -300,6 +287,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Addemployee";
             this.Size = new System.Drawing.Size(873, 690);
+            this.Load += new System.EventHandler(this.Addemployee_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -326,7 +314,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox2;

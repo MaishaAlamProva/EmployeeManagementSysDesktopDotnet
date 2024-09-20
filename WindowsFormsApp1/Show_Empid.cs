@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Update_Information update_Information = new Update_Information();
+            Update_EmpInfo update_Information = new Update_EmpInfo();
             update_Information.Show();
             this.Hide();
         }

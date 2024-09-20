@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1;
+using WindowsFormsApp1.DataAccessLayer;
+using WindowsFormsApp1.Models.DBModel;
 
 namespace WindowsFormsApp1
 {
@@ -22,7 +24,7 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Show_Empid show_Empid = new Show_Empid();
+            Show_EmpInfo show_Empid = new Show_EmpInfo();
             show_Empid.ShowDialog();
             this.Hide();
         }
@@ -42,7 +44,7 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Show_Empid show_Empid2 = new Show_Empid();
+            Show_EmpInfo show_Empid2 = new Show_EmpInfo();
             show_Empid2.ShowDialog();
             this.Hide();
         }
@@ -51,6 +53,7 @@ namespace WindowsFormsApp1
             Application.Exit();
         }
 
+        
         private void button4_Click(object sender, EventArgs e)
         {
             Resign_Form resign_Form = new Resign_Form();
