@@ -38,8 +38,6 @@ namespace WindowsFormsApp1
                 Admin adminForm = new Admin();
                 adminForm.ShowDialog();
             }
-
-
             else
             {
                 LoginViewModel model = new LoginViewModel();
@@ -54,14 +52,11 @@ namespace WindowsFormsApp1
                     return;
                 }
 
+                Employee employee = new Employee(model.UserName);
+                employee.ShowDialog();
+                this.Hide();
 
             }
-
-
-
-           Employee employee = new Employee();
-            employee.ShowDialog();
-            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)

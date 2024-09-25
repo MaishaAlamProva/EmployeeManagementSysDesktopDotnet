@@ -63,9 +63,12 @@ namespace WindowsFormsApp1.DataAccessLayer
                     // Assuming your UserInfoModel has properties like Id, UserName, etc.
                     UserID = Convert.ToInt32(row["UserID"]),
                     UserName = row["UserName"].ToString(),
-                    Password = row["Password"].ToString(),
+                    //Password = row["Password"].ToString(),
+                    Password = row["Password"] as string ?? string.Empty,
                     IsAdmin = Convert.ToBoolean(row["IsAdmin"].ToString())
                     // Add other fields as necessary
+
+
                 };
             }
 
@@ -149,6 +152,43 @@ namespace WindowsFormsApp1.DataAccessLayer
                 Console.WriteLine(ex.Message.ToString());
                 return false;
             }
+        }
+
+
+        public bool UpdatePasswordByEmployee(UserInfoModel user)
+        {
+            string connectionString = Common.connectionString;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+              /*     string query = "UPDATE UserInfo " +
+               "SET Password = @Password " +
+               "FROM UserInfo " +
+               "INNER JOIN EmployeesInfo ON UserInfo.EmpKey = EmployeesInfo.EmpKey " +
+               "WHERE UserInfo.Username = @UserName";*/
+
+                    // string query = "UPDATE UserInfo SET Password = @Password where Username = @UserName INNER JOIN EmployeesInfo ON UserInfo.UserName =EmployeesInfo.EmpKey ";
+                    string query = "UPDATE UserInfo SET Password = @Password WHERE UserName = @UserName";
+
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Password", user.Password);
+                        command.Parameters.AddWithValue("@UserName", user.UserName);
+
+                        int result = command.ExecuteNonQuery();
+                        return result > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message.ToString());
+                return false;
+            }
+
         }
 
 

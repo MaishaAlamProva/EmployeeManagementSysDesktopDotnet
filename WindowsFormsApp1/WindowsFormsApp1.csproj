@@ -77,6 +77,7 @@
     <Compile Include="BusinessLayer\AuthenticationService.cs" />
     <Compile Include="BusinessLayer\DesignationService.cs" />
     <Compile Include="BusinessLayer\EmployeeService.cs" />
+    <Compile Include="BusinessLayer\ResignService.cs" />
     <Compile Include="BusinessLayer\SalaryService.cs" />
     <Compile Include="Dashboard.cs">
       <SubType>UserControl</SubType>
@@ -86,6 +87,7 @@
     </Compile>
     <Compile Include="DataAccessLayer\DesignationInfo.cs" />
     <Compile Include="DataAccessLayer\EmployeeInfo.cs" />
+    <Compile Include="DataAccessLayer\ResignInfo.cs" />
     <Compile Include="DataAccessLayer\SalaryInfo.cs" />
     <Compile Include="DataAccessLayer\UserInfo.cs" />
     <Compile Include="Employee.cs">
@@ -120,6 +122,7 @@
     </Compile>
     <Compile Include="Models\DBModel\DesignationInfoModel.cs" />
     <Compile Include="Models\DBModel\EmployeesInfoModel.cs" />
+    <Compile Include="Models\DBModel\ResignInfoModel.cs" />
     <Compile Include="Models\DBModel\UserInfoModel.cs" />
     <Compile Include="Models\ViewModel\LoginViewModel.cs" />
     <Compile Include="Program.cs" />
@@ -193,6 +196,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
@@ -225,7 +229,13 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Pictures\Screenshot 2024-09-25 232802.png" />
+    <None Include="Pictures\pexels-chetanvlad-1595655.jpg" />
+    <None Include="Pictures\pexels-beevee-1020478.jpg" />
+    <Content Include="Pictures\Screenshot %28157%29.png" />
+    <Content Include="Pictures\Screenshot 2024-09-25 234259.png" />
+  </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>

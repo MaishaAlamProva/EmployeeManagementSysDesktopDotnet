@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -48,7 +46,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
@@ -56,6 +53,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label4
@@ -68,29 +66,11 @@
             this.label4.TabIndex = 62;
             this.label4.Text = "Show Information";
             // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(687, 221);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(313, 36);
-            this.textBox4.TabIndex = 60;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(686, 190);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 28);
-            this.label1.TabIndex = 59;
-            this.label1.Text = "Reset Password:";
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(458, 690);
+            this.button1.Location = new System.Drawing.Point(446, 661);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(190, 56);
             this.button1.TabIndex = 58;
@@ -100,7 +80,7 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(687, 329);
+            this.textBox6.Location = new System.Drawing.Point(688, 239);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(313, 42);
@@ -121,6 +101,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(313, 36);
             this.textBox3.TabIndex = 55;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox2
             // 
@@ -129,6 +110,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(313, 42);
             this.textBox2.TabIndex = 54;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox1
             // 
@@ -142,7 +124,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(686, 288);
+            this.label11.Location = new System.Drawing.Point(686, 199);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(98, 28);
             this.label11.TabIndex = 52;
@@ -208,7 +190,7 @@
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(54, 570);
+            this.textBox8.Location = new System.Drawing.Point(51, 624);
             this.textBox8.Multiline = true;
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(313, 42);
@@ -218,7 +200,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(49, 543);
+            this.label7.Location = new System.Drawing.Point(49, 576);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(161, 28);
             this.label7.TabIndex = 65;
@@ -226,7 +208,7 @@
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(51, 475);
+            this.textBox9.Location = new System.Drawing.Point(51, 506);
             this.textBox9.Multiline = true;
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(313, 42);
@@ -236,25 +218,17 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(49, 451);
+            this.label9.Location = new System.Drawing.Point(49, 461);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(170, 28);
             this.label9.TabIndex = 67;
             this.label9.Text = "Phone Number:";
             // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(688, 543);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(313, 36);
-            this.textBox10.TabIndex = 74;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(682, 512);
+            this.label10.Location = new System.Drawing.Point(683, 499);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(146, 28);
             this.label10.TabIndex = 73;
@@ -262,7 +236,7 @@
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(688, 648);
+            this.textBox11.Location = new System.Drawing.Point(688, 629);
             this.textBox11.Multiline = true;
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(313, 42);
@@ -280,7 +254,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(683, 617);
+            this.label12.Location = new System.Drawing.Point(686, 598);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(138, 28);
             this.label12.TabIndex = 70;
@@ -298,7 +272,7 @@
             // 
             // textBox13
             // 
-            this.textBox13.Location = new System.Drawing.Point(54, 672);
+            this.textBox13.Location = new System.Drawing.Point(687, 326);
             this.textBox13.Multiline = true;
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(313, 42);
@@ -308,21 +282,29 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(49, 641);
+            this.label14.Location = new System.Drawing.Point(688, 295);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(140, 28);
             this.label14.TabIndex = 75;
             this.label14.Text = "Joined Date:";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(691, 541);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(313, 36);
+            this.textBox4.TabIndex = 77;
             // 
             // Show_EmpInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
-            this.ClientSize = new System.Drawing.Size(1081, 758);
+            this.ClientSize = new System.Drawing.Size(1081, 736);
+            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox13);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.textBox10);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBox11);
             this.Controls.Add(this.textBox12);
@@ -335,8 +317,6 @@
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
@@ -359,8 +339,6 @@
         #endregion
 
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
@@ -378,7 +356,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox12;
@@ -386,5 +363,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }

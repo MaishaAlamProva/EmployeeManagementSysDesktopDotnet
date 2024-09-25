@@ -10,12 +10,16 @@ using WindowsFormsApp1.DataAccessLayer;
 using WindowsFormsApp1.Models;
 using WindowsFormsApp1.Models.DBModel;
 using WindowsFormsApp1.Models.ViewModel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WindowsFormsApp1.BusinessLayer
 {
     public class AuthenticationService
     {
+        private UserInfo userInfoDBService = new UserInfo();
+
         UserInfo userInfo = new UserInfo();
+        //EmployeeInfo employeeInfoDBService = new EmployeeInfo();
         public AuthenticationService() { }
 
         public bool LoginAdminAuthentication(LoginViewModel model)
@@ -58,6 +62,16 @@ namespace WindowsFormsApp1.BusinessLayer
 
         }
 
+        public UserInfoModel GetEmployeeByUserName(string userName)
+        {
+            if (!string.IsNullOrEmpty(userName))
+            {
+                var data = userInfo.GetUserByUserName(userName);
+                return data;
+            }
+            return null;
+        }
+
 
 
         public bool RegisterEmployee(LoginViewModel model)
@@ -69,6 +83,18 @@ namespace WindowsFormsApp1.BusinessLayer
             user.IsAdmin = false;
             bool result = userInfo.CreateUserInfo(user);
             return result;
+        }
+
+        public bool UpdatePassword(UserInfoModel user)
+        {
+
+            if (user != null)
+            {
+
+                var status = userInfoDBService.UpdatePasswordByEmployee(user);
+                return status;
+            }
+            return false;
         }
 
     }

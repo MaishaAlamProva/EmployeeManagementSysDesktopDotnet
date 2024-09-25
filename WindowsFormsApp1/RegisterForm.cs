@@ -112,5 +112,20 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void login_showpass_CheckedChanged(object sender, EventArgs e)
+        {
+            // Assuming you have a TextBox for the password (e.g., passwordTextBox) and a CheckBox (login_showpass)
+            if (login_showpass.Checked)
+            {
+                // Show the password
+                login_pass.UseSystemPasswordChar = true;
+            }
+            else
+            {
+                // Hide the password
+                login_pass.UseSystemPasswordChar = false;
+            }
+        }
     }
 }

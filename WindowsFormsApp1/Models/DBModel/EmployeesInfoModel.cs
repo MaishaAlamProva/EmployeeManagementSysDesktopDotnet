@@ -18,10 +18,9 @@ namespace WindowsFormsApp1.Models.DBModel
         public int DesID { get; set; }
         public bool IsActive { get; set; }
         public bool IsDisabled { get; set; }
+        public string Password { get; set; }
         public int WorkingDays { get; set; }
         public int AbsentDays { get; set; }
         public decimal TotalSalary { get; set; }
-
-        public string Password { get; set; } 
     }
 }

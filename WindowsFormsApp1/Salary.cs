@@ -206,7 +206,7 @@ namespace WindowsFormsApp1
 
             try
             {
-                employeeInfo.EmpID = int.Parse(textBox1.Text); 
+                employeeInfo.EmpKey = textBox1.Text; 
                 employeeInfo.WorkingDays = int.Parse(textBox4.Text);
                 employeeInfo.AbsentDays = int.Parse(textBox5.Text);
                 employeeInfo.TotalSalary = decimal.Parse(textBox6.Text);
@@ -228,13 +228,13 @@ namespace WindowsFormsApp1
                    
                     string checkQuery = @"SELECT COUNT(*)
                               FROM EmployeesInfo
-                              WHERE EmpID = @EmpID
+                              WHERE EmpKey = @EmpKey
                               AND EmpName IS NOT NULL
                               AND DesID IS NOT NULL";
 
                     using (SqlCommand checkCommand = new SqlCommand(checkQuery, connection))
                     {
-                        checkCommand.Parameters.AddWithValue("@EmpID", employeeInfo.EmpID);
+                        checkCommand.Parameters.AddWithValue("@EmpKey", employeeInfo.EmpKey);
                         int count = (int)checkCommand.ExecuteScalar();
 
                         if (count == 0)
@@ -250,13 +250,13 @@ namespace WindowsFormsApp1
                                SET WorkingDays = @WorkingDays,
                                    AbsentDays = @AbsentDays,
                                    TotalSalary = @TotalSalary
-                               WHERE EmpID = @EmpID
+                               WHERE  EmpKey = @EmpKey
                                AND (WorkingDays IS NULL OR AbsentDays IS NULL OR TotalSalary IS NULL)";
 
                     using (SqlCommand command = new SqlCommand(updateQuery, connection))
                     {
                        
-                        command.Parameters.AddWithValue("@EmpID", employeeInfo.EmpID);
+                       command.Parameters.AddWithValue("@EmpKey", employeeInfo.EmpKey);
                         command.Parameters.AddWithValue("@WorkingDays", employeeInfo.WorkingDays);
                         command.Parameters.AddWithValue("@AbsentDays", employeeInfo.AbsentDays);
                         command.Parameters.AddWithValue("@TotalSalary", employeeInfo.TotalSalary);

@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls.Primitives;
 using System.Windows.Forms;
 using WindowsFormsApp1.BusinessLayer;
+using WindowsFormsApp1.DataAccessLayer;
 using WindowsFormsApp1.Models.DBModel;
 using WindowsFormsApp1.Models.ViewModel;
 using WindowsFormsApp1.Utilities;
@@ -20,40 +21,30 @@ namespace WindowsFormsApp1
 {
     public partial class Addemployee : UserControl
     {
+        private string DesId;
         DesignationService DesignationService { get; set; } = new DesignationService();
         EmployeeService EmployeeService { get; set; } = new EmployeeService();
 
         AuthenticationService authenticationService { get; set; } = new AuthenticationService();
+
+        protected void myListDropDown_Change(object sender, EventArgs e)
+        {
+            
+        }
         public Addemployee()
         {
             InitializeComponent();
 
             var designations = DesignationService.GetAllDesignation();
-
-            /*foreach (var designation in designations) {
-                comboBox2.Items.Add(designation.DesName);
-                Console.WriteLine(designation.DesID + " " + designation.DesName);
-            }*/
-
             var myDictionary = designations.ToDictionary(d => d.DesID.ToString(), d => d.DesName);
+            //var data = EmployeeService.GetSalaryBydesId(desid);
 
-            /*foreach (KeyValuePair<string, string> designation in myDictionary)
-            {
-               comboBox2.Items.Add(designation.Value);
-               Console.WriteLine("DesID = {0}, DesName = {1}", designation.Key, designation.Value);
-            }*/
-
-            //foreach (var designation in myDictionary)
-            //{
-
-            //   comboBox2.Items.Add($"{designation.Value} (DesID = {designation.Key})");
-            //   Console.WriteLine($"DesID = {designation.Key}, DesName = {designation.Value}");
-            //}
 
             comboBox2.DataSource = new BindingSource(myDictionary, null);
             comboBox2.DisplayMember = "Value";
             comboBox2.ValueMember = "Key";
         }
+
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -82,8 +73,32 @@ namespace WindowsFormsApp1
         {
             Console.WriteLine(comboBox2.Text);
             Console.WriteLine(comboBox2.SelectedValue);
+            string value = comboBox2.SelectedValue.ToString();
 
-            
+            //var designationValue = (KeyValuePair<string, string>) value;
+
+            /* var val = 1;
+             Int32.TryParse(comboBox2.SelectedValue.ToString(), out val);
+             val = (int)comboBox2.SelectedValue;*/
+
+            if (Int32.TryParse(value, out int desid))
+            {
+                var data = EmployeeService.GetSalaryByDesID(desid);
+
+                textBox7.Clear();
+                textBox7.SelectedText = data.Salary.ToString();
+            }
+            else
+            {
+                var data = EmployeeService.GetSalaryByDesID(1);
+                textBox7.Clear();
+                textBox7.SelectedText = data.Salary.ToString();
+            }
+
+            //else
+            //{
+            //    MessageBox.Show("Please enter a valid numeric Designation ID.");
+            //}
         }
 
         
@@ -259,17 +274,9 @@ namespace WindowsFormsApp1
         }
 
 
-        /*public void button5_Click(Control parent)
-        {
-            ClearAllControls(this);
-
-        }*/
-
         public void button5_Click(object sender, EventArgs e)
         {
             ClearAllControls(this);
-           // ClearAllTextBoxes(this);
-
         }
         
         public void button6_Click(object sender, EventArgs e)
